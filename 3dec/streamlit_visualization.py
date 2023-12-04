@@ -12,9 +12,11 @@ from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import r2_score, mean_squared_error
 import seaborn as sns
-from langchain.llms import Ollama
+# from langchain.llms import Ollama
+from PIL import Image
 
-ollama = Ollama(base_url = 'http://localhost:11434', model = 'llama2')
+
+# ollama = Ollama(base_url = 'http://localhost:11434', model = 'llama2')
 
 cor = pd.read_csv('cor.csv')
 # Load data
@@ -97,6 +99,7 @@ def plot_bar_disease(data, factor):
         st.pyplot(plt)
 def main():
         # Sidebar for navigation
+
         st.sidebar.title("Navigation")
         page = st.sidebar.radio("Go to", ["Main Page", "Maps and Graphs", "Regression Analysis", "Correlation Analysis",
                                           "Scoring Metric", "Policy Query Bot (Experimental)"])
@@ -120,6 +123,8 @@ def main():
 data = load_data()
 
 def show_main_page():
+    image = Image.open("peak.png")
+    st.image(image, caption='', use_column_width=True)
     st.title("Introduction")
 
     st.write('''
@@ -150,7 +155,7 @@ def show_maps_and_graphs_page():
     folium_static(heatmap)
     plot_bar_charts(data, d)
     st.title("Social factors heatmap")
-    s = st.selectbox("Select the disease",['Education', 'Linguistic Isolation', 'Poverty', 'Unemployment'])
+    s = st.selectbox("Select the social factor",['Education', 'Linguistic Isolation', 'Poverty', 'Unemployment'])
     heatmap = create_heatmap(data, s)
     folium_static(heatmap)
     plot_bar_charts(data, s)
@@ -159,8 +164,8 @@ def show_regression_analysis_page():
         # Your existing code for regression analysis
     image_info = {
         'Asthma_regression_plot.png': 'Asthma Model: With an R-squared of 0.3077, the model suggests that approximately 30.77% of the variability in asthma rates can be explained by the environmental indicators used in the model. However, an MSE of 1203.21 indicates that the models predictions are, on average, 1203.21 units squared away from the actual asthma rates, which suggests that there could be other factors affecting asthma rates that are not captured by this model.',
-        'Cardiovascular Disease_regression_plot.png': 'Low Birth Weight Model: The low R-squared of 0.0346 indicates a weak fit; the model explains only 3.46% of the variability in low birth weight rates. This low percentage suggests that other variables not included in the model or non-linear relationships might be more influential in predicting low birth weight.',
-        'Low Birth Weight_regression_plot.png': 'Cardiovascular Disease Model: An R-squared of 0.3257 indicates a moderate fit, where about 32.57% of the variability in cardiovascular disease rates can be explained by the environmental indicators. The MSE of 10.51 is the average squared prediction error, which, while not perfect, indicates that the model has some predictive power.',
+        'Cardiovascular Disease_regression_plot.png': 'Cardiovascular Disease Model: An R-squared of 0.3257 indicates a moderate fit, where about 32.57% of the variability in cardiovascular disease rates can be explained by the environmental indicators. The MSE of 10.51 is the average squared prediction error, which, while not perfect, indicates that the model has some predictive power.',
+        'Low Birth Weight_regression_plot.png': 'Low Birth Weight Model: The low R-squared of 0.0346 indicates a weak fit; the model explains only 3.46% of the variability in low birth weight rates. This low percentage suggests that other variables not included in the model or non-linear relationships might be more influential in predicting low birth weight.',
         # Add more images and their descriptions here
     }
     st.title('Regression Analysis')
@@ -261,10 +266,13 @@ grouped_data.reset_index(inplace=True)
 grouped_data_string = grouped_data.to_string(header=False, index=False, index_names=False).replace('\n', ' ')
 st.title('Analyzing Environmental Equity Around Bay Area')
 
+
 def show_query_bot():
+    image = Image.open("peak.png")
+    st.image(image, caption='', use_column_width=True)
     st.title('Query bot:')
     prompt = st.text_input('Enter your query')
-    st.write(ollama(prompt + grouped_data_string) + 'based only on this data')
+    # st.write(ollama(prompt + grouped_data_string) + 'based only on this data')
 
 if __name__ == "__main__":
     main()
