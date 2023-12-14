@@ -33,9 +33,9 @@ Our project explores the intersection of environmental, health, and socio-econom
 This project uses data mining techniques to analyze environmental equity in the Bay Area, focusing on relationships between environmental factors and health outcomes. Our approach includes regression analysis, correlation analysis, and a novel scoring metric.
 
 ## Contribution
-Pranai Ramineni - Research, Feature Transformation, Regression Analysis for Asthma, Scoring Metric, Streamlit and Policy Bot
-Sasank Perumal - Research, Feature Selection, Regression Analysis for Cardiovascular, Streamlit and Policy Bot
-Surya Vakkalagadda - Research, Data Cleaning, Regression Analysis for Low Birth Weight, Correlation Analysis, Streamlit and Policy Bot
+**Pranai Ramineni** - Research, Feature Transformation, Regression Analysis for Asthma, Scoring Metric, Streamlit and Policy Bot
+**Sasank Perumal** - Research, Feature Selection, Regression Analysis for Cardiovascular, Streamlit and Policy Bot
+**Surya Vakkalagadda** - Research, Data Cleaning, Regression Analysis for Low Birth Weight, Correlation Analysis, Streamlit and Policy Bot
 
 ## Conclusions and Future Directions
 Our study reveals significant disparities across the Bay Area. Future work involves extending the dataset for better forecasting and refining policy recommendations for targeted interventions.
