@@ -15,7 +15,7 @@ Our project explores the intersection of environmental, health, and socio-econom
 
 ### Prerequisites
 - Python
-- Mac for Ollama
+- Ollama (Currently only supported in Mac and Linux)
 
 ### Installation
 1. Clone the repository:
