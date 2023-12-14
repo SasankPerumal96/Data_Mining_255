@@ -1,3 +1,6 @@
+Note: All the files are in the folder 3dec
+
+
 # CMPE 255 - Data Mining: Analyzing Environmental Equity Around Bay Area
 
 ## Team 10
