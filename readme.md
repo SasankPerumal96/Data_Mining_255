@@ -3,10 +3,10 @@ Note: All the files are in the folder 3dec
 
 # CMPE 255 - Data Mining: Analyzing Environmental Equity Around Bay Area
 
-## Team 10
-- Pranai Ramineni (016664297)
-- Sasank Perumal (016701022)
-- Venkata Surya Kiran Naidu Vakkalagadda (016701321)
+## Team Members
+- Pranai Ramineni
+- Sasank Perumal
+- Venkata Surya Kiran Naidu Vakkalagadda
 
 ## Overview
 Our project explores the intersection of environmental, health, and socio-economic indicators in the San Francisco Bay Area. Utilizing the CalEnviroScreen 4.0 dataset, we conduct a comprehensive analysis of environmental equity in eight counties of the Bay Area.
